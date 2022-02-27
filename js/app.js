@@ -98,8 +98,10 @@ searchtxt.addEventListener('input' , function(){
     let noteCard = document.getElementsByClassName('noteCard');
     Array.from(noteCard).forEach(function(element){
         let cardname = element.getElementsByTagName('p')[0].innerText
+        let lcardname = cardname.toLowerCase();
         let cardtitle = element.getElementsByTagName('h5')[0].innerText
-        if(cardname.includes(inputVal) || cardtitle.includes(inputVal)){
+        let lcardtitle = cardtitle.toLowerCase();
+        if(lcardname.includes(inputVal) || lcardtitle.includes(inputVal) ){
             element.style.display = "block";
         }
         else{
